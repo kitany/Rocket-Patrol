@@ -1,6 +1,6 @@
 class Menu extends Phaser.Scene {
     constructor() {
-        super("menuScene")
+        super('menuScene')
     }
 
     preload() {
@@ -28,7 +28,11 @@ class Menu extends Phaser.Scene {
         // animation configuration
         this.anims.create({
             key: 'explode',
-            frames: this.anims.generateFrameNumbers('explosion', { start: 0, end: 9, first: 0}),
+            frames: this.anims.generateFrameNumbers('explosion', { 
+                start: 0, 
+                end: 9, 
+                first: 0
+            }),
             frameRate: 30
         })
 

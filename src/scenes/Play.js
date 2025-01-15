@@ -1,6 +1,6 @@
 class Play extends Phaser.Scene {
     constructor() {
-        super("playScene")
+        super('playScene')
     }
 
     create() {
@@ -47,7 +47,7 @@ class Play extends Phaser.Scene {
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig)
 
         // GAME OVER flag
-        this. gameOver = false
+        this.gameOver = false
         
         // 60-second play clock
         scoreConfig.fixedWidth = 0
@@ -63,12 +63,13 @@ class Play extends Phaser.Scene {
         if(this.gameOver && Phaser.Input.Keyboard.JustDown(keyRESET)) {
             this.scene.restart()
         }
-        this.starfield.tilePositionX -= 4
 
         // check key input for menu
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.scene.start("menuScene")
           }
+
+        this.starfield.tilePositionX -= 4
 
         if(!this.gameOver) {    
             // update rocket sprite           
@@ -115,9 +116,9 @@ class Play extends Phaser.Scene {
         boom.anims.play('explode')
         // callback after anim completes
         boom.on('animationcomplete', () => {
-          ship.reset()                         // reset ship position
-          ship.alpha = 1                       // make ship visible again
-          boom.destroy()                       // remove explosion sprite
+          ship.reset()    // reset ship position
+          ship.alpha = 1  // make ship visible again
+          boom.destroy()  // remove explosion sprite
         }) 
         
         // score add and text update
