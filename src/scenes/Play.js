@@ -30,6 +30,7 @@ class Play extends Phaser.Scene {
 
         // initialize score
         this.p1Score = 0
+
         // display score
         let scoreConfig = {
             fontFamily: 'Courier',
@@ -53,7 +54,7 @@ class Play extends Phaser.Scene {
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5)
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- for Menu', scoreConfig).setOrigin(0.5)
-            this,gameOver = true
+            this.gameOver = true
         }, null, this)
     }
 
